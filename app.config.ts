@@ -1,27 +1,27 @@
 export default defineAppConfig({
     shadcnDocs: {
         site: {
-            name: 'documentations',
-            description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+            name: 'doc-memoria',
+            description: 'A gallery of pictures from a lot of games realised under Laravel, with sass, bootstrap, typescript and vuejs.',
             ogImage: '/hero.png',
             ogImageComponent: 'ShadcnDocs',
             ogImageColor: 'light',
         },
         theme: {
             customizable: true,
-            color: 'zinc',
+            color: 'slate',
             radius: 1,
         },
         banner: {
             enable: false,
             showClose: true,
-            content: 'Welcome to **documentations**',
-            to: 'https://github.com/alexis-gss/documentations',
+            content: 'Welcome to **memoria**',
+            to: 'https://github.com/alexis-gss/memoria',
             target: '_blank',
             border: true,
         },
         header: {
-            title: 'documentations',
+            title: 'doc-memoria',
             showTitle: true,
             logo: {
                 light: '/logo.svg',
