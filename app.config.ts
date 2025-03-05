@@ -1,27 +1,27 @@
 export default defineAppConfig({
     shadcnDocs: {
         site: {
-            name: 'documentations',
-            description: 'Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.',
+            name: 'doc-akora',
+            description: 'Library of informations about games on all platforms from RAWG, and lot of news from IGN.',
             ogImage: '/hero.png',
             ogImageComponent: 'ShadcnDocs',
             ogImageColor: 'light',
         },
         theme: {
             customizable: true,
-            color: 'zinc',
+            color: 'yellow',
             radius: 1,
         },
         banner: {
             enable: false,
             showClose: true,
-            content: 'Welcome to **documentations**',
-            to: 'https://github.com/alexis-gss/documentations',
+            content: 'Welcome to **akora**',
+            to: 'https://github.com/alexis-gss/akora',
             target: '_blank',
             border: true,
         },
         header: {
-            title: 'documentations',
+            title: 'doc-akora',
             showTitle: true,
             logo: {
                 light: '/logo.svg',
