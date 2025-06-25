@@ -6,26 +6,28 @@ navigation: false
 ::hero
 ---
 announcement:
-  title: 'Release v1'
+  title: 'Release v1.0.0'
   icon: '🎉'
-  to: https://shadcn-docs-nuxt.vercel.app/blog/v1
+  to: https://github.com/alexis-gss/documentations/releases/latest
   target: _blank
 actions:
   - name: Documentation
-    to: https://shadcn-docs-nuxt.vercel.app/getting-started/introduction
+    to: /getting-started/introduction
   - name: GitHub
     variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+    to: https://github.com/alexis-gss/documentations
     leftIcon: 'lucide:github'
 ---
 
 #title
-Welcome to shadcn-docs-nuxt
+Welcome to Documentations
 
 #description
 Beautifully designed Nuxt Content template built with shadcn-vue. :br Customizable. Compatible. Open Source.
 ::
 
-::div{class="border rounded-lg shadow-md"}
-  :iframe{src="https://shadcn-docs-nuxt.vercel.app/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0"}
+::card
+---
+img: /images/project-preview.png
+---
 ::

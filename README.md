@@ -1,49 +1,40 @@
-# shadcn-docs-nuxt Minimal Starter
+<div align="center">
 
-Starter template for [shadcn-docs-nuxt](https://github.com/ZTL-UwU/shadcn-docs-nuxt).
+![Banner of the github account](/public/images/github-visual.png)
 
-## Setup
+[![GitHub latest commit](https://img.shields.io/github/last-commit/alexis-gss/documentations/master?color=5A718A&style=for-the-badge)](https://github.com/alexis-gss/documentations/commit/master)
+[![GitHub tag](https://img.shields.io/github/tag/alexis-gss/documentations?style=for-the-badge&color=5A718A)](https://github.com/alexis-gss/documentations/tags)
+[![GitHub License](https://img.shields.io/github/license/alexis-gss/documentations?color=5A718A&style=for-the-badge)](https://github.com/alexis-gss/documentations/blob/master/LICENSE)
 
-Make sure to install the dependencies:
+</div>
 
-```bash
-# yarn
-yarn install
+# Introduction
 
-# npm
-npm install
+Official documentation of my project named Documentations.
 
-# pnpm
-pnpm install
+# Table of contents
 
-# bun
-bun install
-```
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
+- [Frameworks, Platforms and Libraries](#frameworks-platforms-and-libraries)
+- [Changelog](#changelog)
+- [Copyright and License](#copyright-and-license)
 
-## Development Server
+# Frameworks, Platforms and Libraries
 
-Start the development server on http://localhost:3000
+[![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)](https://www.markdownguide.org/)
+[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+[![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)](https://nuxt.com/)
 
-```bash
-npm run dev
-```
+# Changelog
 
-## Production
+Latest version v1.0.0.
 
-[![Deploy to NuxtHub](https://hub.nuxt.com/button.svg)](https://hub.nuxt.com/new?repo=ZTL-UwU/shadcn-docs-nuxt-starter)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FZTL-UwU%2Fshadcn-docs-nuxt-starter)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2FZTL-UwU%2Fshadcn-docs-nuxt-starter)
+See the [CHANGELOG.md](CHANGELOG.md) file for details.
 
-Build the application for production:
+# Copyright and License
 
-```bash
-npm run build
-```
+Documentations was written by [Alexis Gousseau](https://github.com/alexis-gss).
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://shadcn-docs-nuxt.vercel.app/getting-started/deployment) for more information.
+Copyright (c) 2025 and beyond Alexis Gousseau.

@@ -1,0 +1,75 @@
+name: Propagate master to project branches
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  Propagate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Retrieve all branches
+        run: git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+
+      - name: Setup git configuration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@noreply.github.com"
+
+      - name: Propagate master to project branches
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+
+          BRANCHES=$(git branch -r \
+            | sed 's/origin\///' \
+            | grep -v '\->' \
+            | sed 's/^ *//' \
+            | grep -Ev '^(master|fork)$' \
+            | grep -v '^sync-master-into-')
+
+          echo "Branches to synchronise : $BRANCHES"
+
+          for branch in $BRANCHES; do
+            echo "=== $branch ==="
+            git checkout -B "$branch" "origin/$branch"
+
+            if git merge --no-edit origin/master; then
+              echo "OK -> push"
+              git push origin "$branch"
+            else
+              echo "Conflicts detected; a MR was opened to resolve them"
+              git merge --abort
+
+              conflict_branch="sync-master-into-${branch}"
+              git checkout -B "$conflict_branch" "origin/$branch"
+              git merge --no-edit origin/master || true
+              git add -A
+              git commit -m "Merge master into $branch"
+              git push origin "$conflict_branch" --force
+
+              existing=$(gh pr list --head "$conflict_branch" --json number --jq '. | length')
+              if [ "$existing" = "0" ]; then
+                gh pr create \
+                  --base "$branch" \
+                  --head "$conflict_branch" \
+                  --title "Conflicts: master → $branch" \
+                  --body "The auto merge of \`master\` into \`$branch\` has conflicts."
+              fi
+            fi
+          done
